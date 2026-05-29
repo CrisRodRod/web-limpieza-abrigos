@@ -120,14 +120,83 @@
     </section>
 
     <section id="contacto" class="contacto">
-      <h2>Contacto</h2>
-      <p>Consúltenos sin compromiso.</p>
-      <div class="datos-contacto">
-        <p><strong>Dirección:</strong> C. Cabo de Finisterre, 40<br>28500 Arganda del Rey, Madrid</p>
-        <p><strong>Teléfono:</strong> 915 31 19 50</p>
-        <p><strong>Email:</strong> pedidos@delaroca.es</p>
+      <h2>Solicitar servicio</h2>
+
+      <div class="contacto-grid">
+
+        <div class="contacto-info">
+          <h3>Datos de contacto</h3>
+          <p><strong>Dirección</strong><br>C. Cabo de Finisterre, 40<br>28500 Arganda del Rey, Madrid</p>
+          <p><strong>Teléfono</strong><br><a href="tel:+34915311950">915 31 19 50</a></p>
+          <p><strong>Email</strong><br><a href="mailto:pedidos@delaroca.es">pedidos@delaroca.es</a></p>
+        </div>
+
+        <form class="formulario" action="https://formspree.io/f/XXXXXXXX" method="POST">
+
+          <div class="campo-grupo campo-grupo--dos">
+            <div class="campo">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Su nombre">
+            </div>
+            <div class="campo">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="600 000 000">
+          </div>
+
+          <div class="campo">
+            <label for="direccion-recogida">Dirección de recogida *</label>
+            <input type="text" id="direccion-recogida" name="direccion_recogida" required placeholder="Calle, número, piso, ciudad">
+          </div>
+
+          <div class="campo">
+            <label for="direccion-entrega">Dirección de entrega</label>
+            <input type="text" id="direccion-entrega" name="direccion_entrega" placeholder="Si es distinta a la de recogida">
+          </div>
+
+          <div class="campo">
+            <label>Tipo de prenda *</label>
+            <div class="opciones-prenda">
+              <label class="opcion-radio">
+                <input type="radio" name="tipo_prenda" value="Abrigo de visón" required>
+                <span>Abrigo de visón</span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tipo_prenda" value="Abrigo de zorro">
+                <span>Abrigo de zorro</span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tipo_prenda" value="Cazadora">
+                <span>Cazadora</span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tipo_prenda" value="Chaqueta">
+                <span>Chaqueta</span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tipo_prenda" value="Otros">
+                <span>Otros</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="comentarios">Comentarios</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Indíquenos cualquier detalle sobre su prenda o servicio que necesita"></textarea>
+          </div>
+
+          <p class="campo-legal">Al enviar este formulario acepta nuestra <a href="politica-privacidad.html">política de privacidad</a>.</p>
+
+          <button type="submit" class="boton">Enviar solicitud</button>
+
+        </form>
+
       </div>
-      <a href="tel:+34915311950" class="boton">Llamar ahora</a>
     </section>
 
   </main>
