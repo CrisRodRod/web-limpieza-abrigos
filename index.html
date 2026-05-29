@@ -131,7 +131,12 @@
           <p><strong>Email</strong><br><a href="mailto:info@fcfurcleaning.es">info@fcfurcleaning.es</a></p>
         </div>
 
-        <form class="formulario" action="https://formspree.io/f/XXXXXXXX" method="POST">
+        <div id="formulario-exito" class="formulario-exito" style="display:none">
+          <p>Gracias por su solicitud.</p>
+          <p>Nos pondremos en contacto con usted en la mayor brevedad posible.</p>
+        </div>
+
+        <form class="formulario" id="formulario-contacto">
 
           <div class="campo-grupo campo-grupo--dos">
             <div class="campo">
@@ -211,7 +216,6 @@
   </footer>
 
   <script>
-    // Muestra el banner solo si no se ha aceptado antes
     if (localStorage.getItem('cookiesAceptadas')) {
       document.getElementById('banner-cookies').style.display = 'none';
     }
@@ -219,6 +223,29 @@
       localStorage.setItem('cookiesAceptadas', 'true');
       document.getElementById('banner-cookies').style.display = 'none';
     }
+
+    document.getElementById('formulario-contacto').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const boton = this.querySelector('button[type="submit"]');
+      boton.textContent = 'Enviando...';
+      boton.disabled = true;
+
+      const datos = Object.fromEntries(new FormData(this));
+
+      try {
+        await fetch('https://hook.eu1.make.com/7ohjgmsthddv6rog4cq427gw0fe0yvmt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(datos)
+        });
+        document.getElementById('formulario-contacto').style.display = 'none';
+        document.getElementById('formulario-exito').style.display = 'block';
+      } catch (error) {
+        boton.textContent = 'Enviar solicitud';
+        boton.disabled = false;
+        alert('Ha ocurrido un error. Por favor llámenos al 915 31 19 50.');
+      }
+    });
   </script>
 
 </body>
