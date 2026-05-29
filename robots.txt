@@ -4,4 +4,4 @@ Disallow: /aviso-legal.html
 Disallow: /politica-privacidad.html
 Disallow: /politica-cookies.html
 
-Sitemap: https://crisrodrod.github.io/web-limpieza-abrigos/sitemap.xml
+Sitemap: https://www.fcfurcleaning.es/sitemap.xml
