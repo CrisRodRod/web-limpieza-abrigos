@@ -12,21 +12,21 @@ body {
 
 /* HEADER */
 header {
-  background-color: #2c1a0e;
-  color: #faf6f1;
-  padding: 20px 40px;
+  background-color: #faf6f1;
+  border-bottom: 1px solid #d9c9b8;
+  padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  height: 52px;
+  height: 64px;
   width: auto;
 }
 
 nav a {
-  color: #f0e6d6;
+  color: #2c1a0e;
   text-decoration: none;
   margin-left: 32px;
   font-size: 0.85rem;
